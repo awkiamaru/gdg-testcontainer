@@ -39,9 +39,12 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     runtimeOnly("org.yaml:snakeyaml")
     runtimeOnly("org.flywaydb:flyway-database-postgresql:${flywayPostgresVersion}")
+
+    testImplementation("io.kotest:kotest-property")
     testImplementation("org.testcontainers:kafka")
     testImplementation("org.testcontainers:postgresql")
     testImplementation("org.testcontainers:testcontainers")
+    testImplementation("io.micronaut.test:micronaut-test-rest-assured")
 
 }
 
