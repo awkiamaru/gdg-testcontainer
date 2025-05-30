@@ -23,7 +23,6 @@ class TestPropertySourceLoader : PropertySourceLoader {
             FLYWAY_URL_CONFIG_PATH to TestContainersEnvironment.jdbcUrl,
             FLYWAY_USERNAME_CONFIG_PATH to TestContainersEnvironment.username,
             FLYWAY_PASSWORD_CONFIG_PATH to TestContainersEnvironment.password,
-            FLYWAY_DEFAULT_SCHEMA_CONFIG_PATH to TestContainersEnvironment.databaseName,
             KAFKA_BOOTSTRAP_SERVERS_CONFIG_PATH to TestContainersEnvironment.kafkaBootstrapServers
           )
         )
@@ -49,7 +48,6 @@ class TestPropertySourceLoader : PropertySourceLoader {
     const val FLYWAY_URL_CONFIG_PATH = "flyway.datasources.default.url"
     const val FLYWAY_USERNAME_CONFIG_PATH = "flyway.datasources.default.username"
     const val FLYWAY_PASSWORD_CONFIG_PATH = "flyway.datasources.default.password"
-    const val FLYWAY_DEFAULT_SCHEMA_CONFIG_PATH = "flyway.datasources.default.default-schema"
     const val KAFKA_BOOTSTRAP_SERVERS_CONFIG_PATH = "kafka.bootstrap.servers"
   }
 }

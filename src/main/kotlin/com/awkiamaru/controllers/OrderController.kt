@@ -7,10 +7,12 @@ import com.awkiamaru.entities.OrderItemRepository
 import com.awkiamaru.entities.OrderRepository
 import com.awkiamaru.entities.ProductRepository
 import com.awkiamaru.events.OrderProducer
+import io.micronaut.http.HttpStatus.CREATED
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Post
+import io.micronaut.http.annotation.Status
 import java.util.UUID
 import kotlin.jvm.optionals.getOrNull
 
@@ -23,6 +25,7 @@ class OrderController(
 ) {
 
   @Post
+  @Status(CREATED)
   fun create(@Body body: Request.Order): OrderEntity = with(body){
     val orderedProducts = products.associateBy { it.id }
 
