@@ -1,0 +1,32 @@
+micronaut:
+  application:
+    name: gdg-testcontainer
+  server:
+    port: 8080
+    context-path: /v1
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: 'test'
+    driver-class-name: org.postgresql.Driver
+    db-type: postgres
+    dialect: POSTGRES
+flyway:
+  datasources:
+    default:
+      enabled: true
+      url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:test}
+      username: ${DB_USER:test}
+      password: ${DB_PASSWORD:test}
+      locations: classpath:/db/migration/*.sql
+
+kafka:
+  enabled: ${KAFKA_ENABLED:true}
+  health:
+    enabled: true
+    restricted: true
+  bootstrap:
+    servers: ${KAFKA_HOSTS:`localhost:29092`}
+  consumer:
+    auto-offset-reset: earliest
